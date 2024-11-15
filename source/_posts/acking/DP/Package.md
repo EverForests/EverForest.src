@@ -7,7 +7,7 @@ description: "动态规划，路线布置"
 cover: "https://raw.githubusercontent.com/EverForests/PicGo/master/wallhaven-85jq9k.jpg"
 ---
 
-## 01背包 [go](https://www.acwing.com/activity/content/problem/content/997/)
+## 01背包 [go](https://www.acwing.com/problem/content/2/)
 
 问题简介：在一定体积的包里装入足够多的物品使得背包里的物品价值最大化。
 
@@ -76,7 +76,7 @@ int main()
 }
 ```
 
-## 完全背包问题 [go](https://www.acwing.com/activity/content/problem/content/998/)
+## 完全背包问题 [go](https://www.acwing.com/problem/content/3/)
 
 问题简介：在01背包的基础上加入一些变数，每种物品都有无数个。
 
@@ -143,7 +143,7 @@ int main()
 }
 ```
 
-## 多重背包问题 [go](https://www.acwing.com/activity/content/problem/content/999/)
+## 多重背包问题 [go](https://www.acwing.com/problem/content/4/)
 
 相当于弱化版的完全背包，每种物品的数量是有限的。
 
@@ -178,7 +178,7 @@ int main()
 }
 ```
 
-## 多重背包问题 · 加强版 [go](https://www.acwing.com/activity/content/problem/content/1000/)
+## 多重背包问题 · 加强版 [go](https://www.acwing.com/problem/content/5/)
 
 在数据比较强时，就不能用这样的多重循环来硬解了，可以考虑通过分组来构建一个新的情景。
 
@@ -233,7 +233,7 @@ int main()
 }
 ```
 
-## 分组背包问题 [go](https://www.acwing.com/activity/content/problem/content/1001/)
+## 分组背包问题 [go](https://www.acwing.com/problem/content/9/)
 
 数据量较小，分组较为简洁，所以改写一下状态转移方程就可以解决。
 
