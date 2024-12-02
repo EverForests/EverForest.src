@@ -104,7 +104,7 @@ int main()
             if (f[mid] < a[i]) l = mid;
             else r = mid - 1;
         }
-      
+    
         f[r + 1] = a[i];
         len = max(len, r+1);
     }
@@ -115,3 +115,129 @@ int main()
 }
 ```
 
+## 最长公共子序列 [Go](https://www.acwing.com/problem/content/899/)
+
+考虑序列A的前i项，序列B的前j项，讨论每组情况下的最长公共子序列。
+
+转移方程是难点所在，需要对三种情况进行分析。
+
+```c++
+#include <iostream>
+#include <cstring>
+#include <algorithm>
+
+const int N = 1010;
+int f[N][N];
+int n, m;
+char a[N], b[N];
+
+using namespace std;
+
+int main()
+{
+    scanf("%d%d", &n, &m);
+    scanf("%s%s", a+1, b+1);
+  
+    for (int i = 1; i <= n; i++)
+        for (int j = 1; j <= m; j++) {
+            f[i][j] = max(f[i-1][j], f[i][j-1]);
+            if (a[i] == b[j]) f[i][j] = max(f[i][j], f[i-1][j-1] + 1);
+        }
+  
+    cout << f[n][m] << endl;
+    return 0;
+}
+```
+
+## 最短编辑距离 [Go](https://www.acwing.com/problem/content/904/)
+
+改变f[i][j]的内涵即可，其余同最长公共子序列，每一步遍历增删换三个方法。
+
+```c++
+#include <iostream>
+#include <cstring>
+#include <algorithm>
+
+using namespace std;
+
+const int N = 1010;
+int n, m;
+int f[N][N];
+char a[N], b[N];
+
+int main()
+{
+    scanf("%d%s", &n, a + 1);
+    scanf("%d%s", &m, b + 1);
+  
+    for (int i = 1; i <= n; i++) f[i][0] = i;
+    for (int j = 1; j <= m; j++) f[0][j] = j;
+  
+    for (int i = 1; i <= n; i++)
+        for (int j = 1; j <= m; j++) {
+            f[i][j] = min(f[i-1][j] + 1, f[i][j-1] + 1);  // 考虑增删
+            if (a[i] == b[j]) f[i][j] = min(f[i][j], f[i-1][j-1] );  // 考虑无需操作
+            else f[i][j] = min(f[i][j], f[i-1][j-1] + 1);  // 考虑换
+        }
+      
+    cout << f[n][m] << endl;
+  
+    return 0;
+}
+```
+
+## 编辑距离 [Go](https://www.acwing.com/problem/content/901/)
+
+难点主要在于写法，关键算法同上面的最短编辑距离。
+
+```c++
+#include <iostream>
+#include <cstring>
+#include <algorithm>
+
+using namespace std;
+
+const int N = 1010;
+char a[N][N];
+int n, m;
+
+int edit_distance(char sa[], char sb[]) {
+    int la = strlen(sa + 1);
+    int lb = strlen(sb + 1);
+  
+    int f[N][N];
+  
+    for (int i = 1; i <= la; i++) f[i][0] = i;
+    for (int j = 1; j <= lb; j++) f[0][j] = j;
+  
+    for (int i = 1; i <= la; i++)
+        for (int j = 1; j <= lb; j++) {
+            f[i][j] = min(f[i-1][j] + 1, f[i][j-1] + 1);
+            f[i][j] = min(f[i][j], f[i-1][j-1] + (sa[i] != sb[j]));
+        }
+      
+    return f[la][lb];
+}
+
+int main()
+{
+    cin >> n >> m;
+    for (int i = 1; i <= n; i++) scanf("%s", a[i]+1);
+  
+    while (m--) {
+        char b[N];
+        int res = 0;
+        int limit;
+      
+        scanf("%s%d", b + 1, &limit);
+      
+        for (int i = 1; i <= n; i++) {
+            if (edit_distance(a[i], b) <= limit) res++;
+        }
+      
+        cout << res << endl;
+    }
+  
+    return 0;
+}
+```
