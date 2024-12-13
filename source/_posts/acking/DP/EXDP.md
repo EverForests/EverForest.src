@@ -1,7 +1,7 @@
 ---
-title: EXDP
+title: 特殊DP问题
 tags: [特殊DP问题]
-categories: 'acting'
+categories: 'acking'
 description: ''
 cover: 'https://raw.githubusercontent.com/EverForests/PicGo/master/Avg_50_i36.png'
 date: 2024-12-13 10:10:18
