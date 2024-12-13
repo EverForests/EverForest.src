@@ -3,12 +3,12 @@ title: EXDP
 tags: [特殊DP问题]
 categories: 'acting'
 description: ''
-cover: 'https://raw.githubusercontent.com/EverForests/PicGo/master/DSC_0032.JPG'
+cover: 'https://raw.githubusercontent.com/EverForests/PicGo/master/Avg_50_i36.png'
 date: 2024-12-13 10:10:18
 keywords:
 ---
 
-## 区间DP——石子合并
+## 区间DP——石子合并 [Go](https://www.acwing.com/problem/content/284/)
 
 给定一堆石子，规定代价计算方式为待合并两堆石子的质量和，找代价最小的方案。
 
@@ -47,7 +47,7 @@ int main(){
 }
 ```
 
-## 计数DP——整数划分
+## 计数DP——整数划分 [Go](https://www.acwing.com/problem/content/902/)
 
 将一个整数划分为一个单调序列，求合理的划分方法数。
 
@@ -88,7 +88,7 @@ int main()
 }
 ```
 
-## 数位统计DP——计数问题
+## 数位统计DP——计数问题 [Go](https://www.acwing.com/problem/content/340/)
 
 给定两个数，求范围内0～9各出现次数（这其实并不算一个正统的DP问题，更像小学数奥。。
 
@@ -242,7 +242,7 @@ int main()
 }
 ```
 
-## 状态压缩DP——最短Hamilton路径
+## 状态压缩DP——最短Hamilton路径 [Go](https://www.acwing.com/problem/content/93/)
 
 给定一张 n 个点的带权无向图，点从 0∼n−1 标号，求起点 0 到终点 n−1 的最短 Hamilton 路径。 Hamilton 路径的定义是从 0 到 n−1 不重不漏地经过每个点恰好一次。
 
@@ -289,7 +289,7 @@ int main()
 }
 ```
 
-## 树形DP——没有上司的舞会
+## 树形DP——没有上司的舞会 [Go](https://www.acwing.com/problem/content/287/)
 
 Ural 大学有 N 名职员，编号为 1∼N。
 他们的关系就像一棵以校长为根的树，父节点就是子节点的直接上司。
@@ -351,7 +351,7 @@ int main() {
 }
 ```
 
-## 记忆化搜索——滑雪
+## 记忆化搜索——滑雪 [Go](https://www.acwing.com/problem/content/903/)
 
 一个人在矩形雪域滑雪，有多个不同高度的区域（点），他只能从高海拔区域向低海拔区域滑，可以从任一区域开始滑，求最长的滑行轨迹（经过区域最多）。
 
